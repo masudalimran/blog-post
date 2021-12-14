@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "React JS",
+      "dateTime": "Tuesday, December 14th, 2021 at 3:41 PM",
+      "body": "React (also known as React.js or ReactJS) is a free and open-source front-end JavaScript library[3] for building user interfaces based on UI components. It is maintained by Meta (formerly Facebook) and a community of, individual developers and companies.[4][5][6] React can be used as a base in the development of single-page or mobile applications. However, React is only concerned with state management and rendering that state to the DOM, so creating React applications usually requires the use of additional libraries for routing, as well as certain client-side functionality.[7]"
+    },
+    {
+      "id": 2,
+      "title": "Wix",
+      "dateTime": "Tuesday, December 14th, 2021 at 3:41 PM",
+      "body": "Wix.com Ltd. (Hebrew: some hebrew text) is an Israeli software company that provides cloud-based web development services. It allows users to create HTML5 1 websites and mobile sites through the use of online drag and drop tools.[4] Along with its headquarters and other offices in Israel, Wix also has offices in Brazil, Canada, Germany, India, Ireland, Lithuania, the United States, and Ukraine.[5] Users can add social plug-ins, e-commerce, online marketing, contact forms, e-mail marketing, and community forums to their web sites using a variety of Wix-developed and third-party applications.[6][7] The Wix website builder is built on a freemium business model, earning its revenues through premium upgrades.[8]"
+    },
+    {
+      "id": 3,
+      "title": "Shopify",
+      "dateTime": "Tuesday, December 14th, 2021 at 3:41 PM",
+      "body": "Shopify was founded in 2006 by Tobias Lütke and Scott Lake after attempting to open Snowdevil, an online store for snowboarding equipment. Dissatisfied with the existing e-commerce products on the market, Lütke, a computer programmer by trade, instead built his own.[12][13][14] Lütke used the open source web application framework Ruby on Rails to build Snowdevil's online store, and launched it after two months of development.[15][16] The Snowdevil founders launched the platform as Shopify in June 2006.[15] Shopify created an open-source template language called Liquid, which is written in Ruby and used since 2006. In June 2009, Shopify launched an application programming interface (API) platform and App Store. The API allows developers to create applications for Shopify online stores and then sell them on the Shopify App Store.[18]\""
+    },
+    {
+      "id": 4,
+      "title": "Windows",
+      "dateTime": "Tuesday, December 14th, 2021 at 3:47 PM",
+      "body": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    },
+    {
+      "id": 5,
+      "title": "Mac OS",
+      "dateTime": "Tuesday, December 14th, 2021 at 3:49 PM",
+      "body": "Mac OS X and later OS X) is a proprietary graphical operating system developed and marketed by Apple Inc. since 2001. It is the primary operating system for Apple's Mac computers. Within the market of desktop and laptop computers it is the second most widely used desktop OS, after Windows NT and ahead of Chrome OS.\n\nmacOS succeeded the classic Mac OS, a Macintosh operating system with nine releases from 1984 to 1999. During this time, Apple cofounder Steve Jobs had left Apple and started another company, NeXT, developing the NeXTSTEP platform that would later be acquired by Apple to form the basis of macOS."
+    },
+    {
+      "id": 6,
+      "title": "Linux",
+      "dateTime": "Tuesday, December 14th, 2021 at 3:50 PM",
+      "body": " open-source Unix-like operating systems based on the Linux kernel,[12] an operating system kernel first released on September 17, 1991, by Linus Torvalds.[13][14][15] Linux is typically packaged in a Linux distribution.\n\nDistributions include the Linux kernel and supporting system software and libraries, many of which are provided by the GNU Project. Many Linux distributions use the word \"Linux\" in their name, but the Free Software Foundation uses the name \"GNU/Linux\" to emphasize the importance of GNU software, causing some controversy.[16][17]\n\nPopular Linux distributions[18][19][20] include Debian, Fedora, and Ubuntu. Commercial distributions include Red Hat Enterprise Linux and SUSE Linux Enterprise Server. Desktop Linux distributions include a windowing system such as X11 or Wayland, and a desktop environment such as GNOME or KDE Plasma. Distributions intended for servers may omit graphics altogether, or include a solution stack such as LAMP."
+    }
+  ]
+}

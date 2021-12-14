@@ -24,7 +24,7 @@ export default function NewPost({
   }, [titleCount]);
 
   useEffect(() => {
-    if (wordCount > 500) {
+    if (wordCount > 1000) {
       setPostNotValid(true);
     } else {
       setPostNotValid(false);
@@ -61,14 +61,14 @@ export default function NewPost({
 
         <label htmlFor="postBody">
           Post:{" "}
-          {wordCount > 500 ? (
+          {wordCount > 1000 ? (
             <span style={{ color: "red" }}>
               {wordCount}
-              <span style={{ color: "black" }}>/500</span>
-              <p>upto 500 Characters</p>
+              <span style={{ color: "black" }}>/1000</span>
+              <p>upto 1000 Characters</p>
             </span>
           ) : (
-            <span>{wordCount}/500</span>
+            <span>{wordCount}/1000</span>
           )}
         </label>
         <textarea

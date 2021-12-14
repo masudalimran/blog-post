@@ -222,10 +222,16 @@ body {
   min-width: 48px;
   border-radius: 0.25rem;
   padding: 0.5rem;
+  margin: .5rem;
   font-size: 1rem;
   background-color: red;
   color: #fff;
   cursor: pointer;
+}
+
+.EditButton {
+  background-color: orange !important;
+  color: black !important;
 }
 
 .statusMsg {
