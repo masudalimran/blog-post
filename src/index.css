@@ -71,9 +71,33 @@ body {
   align-items: flex-start;
 }
 
+.NavDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
 .searchForm {
   width: 80%;
   padding: 1rem 0 0 0.75rem;
+}
+
+.mobileMenu {
+  margin: 16px auto;
+  color: white;
+  font-size: 3rem;
+  border: 1px solid white;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+
+.mobileMenu:hover {
+  color: black;
+  background-color: white;
+}
+
+.lists {
+  display: none;
 }
 
 .searchForm input[type="text"] {
@@ -271,6 +295,14 @@ body {
     padding: .5rem 0;
   }
 
+  .lists1 {
+    display: block;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+
   .searchForm input[type="text"] {
     margin-left: 0.5rem;
   }
@@ -284,6 +316,14 @@ body {
 
   .Header svg {
     font-size: 3rem;
+  }
+
+  .lists1 {
+    display: block;
+  }
+
+  .mobileMenu {
+    display: none;
   }
 
 }

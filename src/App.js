@@ -15,6 +15,10 @@ import Missing from "./components/404/Missing";
 // Import Axios
 import api from "./api/posts";
 
+// Custom Hooks
+import useWindowSize from "./hooks/useWindowSize";
+import useAxiosFetch from "./hooks/useAxiosFetch";
+
 // impost from librarys
 import { Route, Switch, useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -35,25 +39,14 @@ function App() {
 
   const history = useHistory();
 
+  // From Custom Hooks
+  const { width } = useWindowSize();
+  const { data, fetchError, isLoading } = useAxiosFetch("/posts");
+
   // Use Effects
   useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        const response = await api.get("/posts");
-        setPosts(response.data);
-      } catch (error) {
-        if (error.response) {
-          // Not in the 200 response range
-          console.log(error.response.data);
-          console.log(error.response.status);
-          console.log(error.response.headers);
-        } else {
-          console.log(`Error: ${error.message}`);
-        }
-      }
-    };
-    fetchPost();
-  }, []);
+    setPosts(data);
+  }, [data]);
 
   useEffect(() => {
     const filteredResults = posts.filter(
@@ -118,13 +111,17 @@ function App() {
 
   return (
     <div className="App">
-      <Header title="React JS Blog" />
-      <Nav search={search} setSearch={setSearch} />
+      <Header title="React JS Blog" width={width} />
+      <Nav search={search} setSearch={setSearch} width={width} />
 
       {/* Routes */}
       <Switch>
         <Route exact path="/">
-          <Home posts={searchResults} />
+          <Home
+            posts={searchResults}
+            fetchError={fetchError}
+            isLoading={isLoading}
+          />
         </Route>
         <Route exact path="/post">
           <NewPost
