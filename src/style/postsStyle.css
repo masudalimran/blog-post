@@ -1,0 +1,18 @@
+.postTitle:hover {
+    color: #66d8f5 !important;
+}
+
+.readMore {
+    padding: .4rem;
+    border: 1px solid rgb(172, 128, 128);
+    color: green;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+.readMore:hover {
+    /* border: none; */
+    color: white;
+    background-color: rgb(172, 128, 128);
+
+}

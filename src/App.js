@@ -111,7 +111,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header title="React JS Blog" width={width} />
+      <Header title="Blog" width={width} />
       <Nav search={search} setSearch={setSearch} width={width} />
 
       {/* Routes */}
