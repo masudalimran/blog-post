@@ -77,6 +77,11 @@ body {
   flex-direction: row;
 }
 
+.searchNMenu {
+  display: flex;
+  flex-direction: row;
+}
+
 .searchForm {
   width: 80%;
   padding: 1rem 0 0 0.75rem;
@@ -94,10 +99,6 @@ body {
 .mobileMenu:hover {
   color: black;
   background-color: white;
-}
-
-.lists {
-  display: none;
 }
 
 .searchForm input[type="text"] {
@@ -262,7 +263,7 @@ body {
   margin-top: 2rem;
 }
 
-@media only screen and (min-width: 610px) {
+@media only screen and (min-width: 768px) {
   html {
     font-size: 22px;
   }
@@ -290,17 +291,13 @@ body {
     color: #333;
   }
 
-  .searchForm {
+  .searchNMenu {
     width: 50%;
+  }
+
+  .searchForm {
+    width: 80%;
     padding: .5rem 0;
-  }
-
-  .lists1 {
-    display: block;
-  }
-
-  .mobileMenu {
-    display: none;
   }
 
   .searchForm input[type="text"] {
@@ -318,12 +315,11 @@ body {
     font-size: 3rem;
   }
 
-  .lists1 {
-    display: block;
+  .searchNMenu {
+    width: 50%;
   }
 
-  .mobileMenu {
-    display: none;
+  .searchForm {
+    width: 90%;
   }
-
 }
