@@ -254,11 +254,6 @@ body {
   cursor: pointer;
 }
 
-.EditButton {
-  background-color: orange !important;
-  color: black !important;
-}
-
 .statusMsg {
   margin-top: 2rem;
 }

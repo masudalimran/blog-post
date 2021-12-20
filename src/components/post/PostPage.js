@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import "../../style/postsStyle.css";
 
 export default function PostPage({ posts, handleDelete }) {
   const { id } = useParams();
@@ -15,7 +16,12 @@ export default function PostPage({ posts, handleDelete }) {
             <Link to={`/edit/${post.id}`}>
               <button className="EditButton">Edit Post</button>
             </Link>
-            <button onClick={() => handleDelete(post.id)}>Delete Post</button>
+            <button
+              className="DeleteButton"
+              onClick={() => handleDelete(post.id)}
+            >
+              Delete Post
+            </button>
           </>
         ) : (
           <>

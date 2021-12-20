@@ -11,8 +11,28 @@
 }
 
 .readMore:hover {
-    /* border: none; */
     color: white;
     background-color: rgb(172, 128, 128);
+}
 
+.EditButton {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid orange !important;
+}
+
+.EditButton:hover {
+    background-color: orange !important;
+    color: black !important;
+}
+
+.DeleteButton {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid red !important;
+}
+
+.DeleteButton:hover {
+    background-color: red !important;
+    color: white !important;
 }
