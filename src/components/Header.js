@@ -1,8 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaLaptop, FaTabletAlt, FaMobileAlt } from "react-icons/fa";
+import useWindowSize from "../hooks/useWindowSize";
 
-export default function Header({ title, width }) {
+// import context
+
+export default function Header({ title }) {
+  // Use Context
+  const { width } = useWindowSize();
+
   return (
     <header className="Header">
       <Link to="/" style={{ textDecoration: "none", color: "black" }}>

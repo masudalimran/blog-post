@@ -1,8 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { ImMenu } from "react-icons/im";
 import { Link } from "react-router-dom";
 
-export default function Nav({ search, setSearch, width }) {
+// import Context
+import DataContext from "../context/DataContext";
+
+export default function Nav() {
+  // Use Context
+  const { search, setSearch, width } = useContext(DataContext);
+
   const [viewMenuMobile, setViewMenuMobile] = useState(false);
   const mobileMenu = () => {
     if (viewMenuMobile) {

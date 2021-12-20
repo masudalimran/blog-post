@@ -1,8 +1,17 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+
+// import Style
 import "../../style/postsStyle.css";
 
-export default function PostPage({ posts, handleDelete }) {
+// import context
+import { useContext } from "react/cjs/react.development";
+import DataContext from "../../context/DataContext";
+
+export default function PostPage() {
+  // Use Context
+  const { posts, handleDelete } = useContext(DataContext);
+
   const { id } = useParams();
   const post = posts.find((post) => post.id.toString() === id);
   return (

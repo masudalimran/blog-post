@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
-export default function NewPost({
-  postTitle,
-  setPostTitle,
-  postBody,
-  setPostBody,
-  handleSubmit,
-}) {
+// import context
+import DataContext from "../../context/DataContext";
+
+export default function NewPost() {
+  // Use context
+  const { postTitle, setPostTitle, postBody, setPostBody, handleSubmit } =
+    useContext(DataContext);
+
   // Use States
   const [titleCount, setTitleCount] = useState(0);
   const [titleNotValid, setTitleNotValid] = useState(false);

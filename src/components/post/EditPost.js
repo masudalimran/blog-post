@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-export default function EditPost({
-  posts,
-  handleEdit,
-  editPostTitle,
-  setEditPostTitle,
-  editPostBody,
-  setEditPostBody,
-}) {
+
+// Import Context
+import { useContext } from "react/cjs/react.development";
+import DataContext from "../../context/DataContext";
+
+export default function EditPost() {
+  // Use Context
+  const {
+    posts,
+    handleEdit,
+    editPostTitle,
+    setEditPostTitle,
+    editPostBody,
+    setEditPostBody,
+  } = useContext(DataContext);
+
   const { id } = useParams();
   const post = posts.find((post) => post.id.toString() === id);
   useEffect(() => {
