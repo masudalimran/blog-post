@@ -1,23 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 
+// Import Axios
+import api from "../../api/posts";
+
 // Import Context
-import { useContext } from "react/cjs/react.development";
 import DataContext from "../../context/DataContext";
 
 export default function EditPost() {
   // Use Context
-  const {
-    posts,
-    handleEdit,
-    editPostTitle,
-    setEditPostTitle,
-    editPostBody,
-    setEditPostBody,
-  } = useContext(DataContext);
+  const { format, history, posts, setPosts } = useContext(DataContext);
 
   const { id } = useParams();
   const post = posts.find((post) => post.id.toString() === id);
+
+  // Use States
+  const [editPostTitle, setEditPostTitle] = useState("");
+  const [editPostBody, setEditPostBody] = useState("");
+
+  const [titleCount, setTitleCount] = useState(0);
+  const [titleNotValid, setTitleNotValid] = useState(false);
+
+  const [wordCount, setWordCount] = useState(0);
+  const [postNotValid, setPostNotValid] = useState(false);
+
+  // Use Effects
   useEffect(() => {
     if (post) {
       setEditPostTitle(post.title);
@@ -26,14 +33,6 @@ export default function EditPost() {
       setWordCount(post.body.length);
     }
   }, [post, setEditPostTitle, setEditPostBody]);
-  // Use States
-  const [titleCount, setTitleCount] = useState(0);
-  const [titleNotValid, setTitleNotValid] = useState(false);
-
-  const [wordCount, setWordCount] = useState(0);
-  const [postNotValid, setPostNotValid] = useState(false);
-
-  // Use Effects
   useEffect(() => {
     if (titleCount > 60) {
       setTitleNotValid(true);
@@ -49,6 +48,31 @@ export default function EditPost() {
       setPostNotValid(false);
     }
   }, [wordCount]);
+
+  // Functions
+  // TODO Hanlde Edit
+  const handleEdit = async (e, id) => {
+    e.preventDefault();
+    const dateTime = format(new Date(), "PPPPp");
+    const updatedPost = {
+      id,
+      title: editPostTitle,
+      dateTime,
+      body: editPostBody,
+    };
+    try {
+      const response = await api.put(`/posts/${id}`, updatedPost);
+      setPosts(
+        posts.map((post) => (post.id === id ? { ...response.data } : post))
+      );
+      setEditPostTitle("");
+      setEditPostBody("");
+      history.push("/");
+    } catch (error) {
+      console.log(`Error: ${error.message}`);
+    }
+  };
+
   return (
     <main className="NewPost">
       {editPostTitle ? (

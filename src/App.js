@@ -21,8 +21,8 @@ import { DataProvider } from "./context/DataContext";
 function App() {
   return (
     <div className="App">
-      <Header title="Blog" />
       <DataProvider>
+        <Header title="Blog" />
         <Nav />
         {/* Routes */}
         <Switch>

@@ -5,10 +5,10 @@ import Post from "./Post";
 import DataContext from "../../context/DataContext";
 
 export default function Feed() {
-  const { posts } = useContext(DataContext);
+  const { searchResults } = useContext(DataContext);
   return (
     <>
-      {posts.map((post) => (
+      {searchResults.map((post) => (
         <Post key={post.id} post={post} />
       ))}
     </>

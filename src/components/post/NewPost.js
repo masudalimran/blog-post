@@ -1,14 +1,17 @@
 import React, { useState, useEffect, useContext } from "react";
+import api from "../../api/posts";
 
 // import context
 import DataContext from "../../context/DataContext";
 
 export default function NewPost() {
   // Use context
-  const { postTitle, setPostTitle, postBody, setPostBody, handleSubmit } =
-    useContext(DataContext);
+  const { posts, setPosts, history, format } = useContext(DataContext);
 
   // Use States
+  const [postTitle, setPostTitle] = useState("");
+  const [postBody, setPostBody] = useState("");
+
   const [titleCount, setTitleCount] = useState(0);
   const [titleNotValid, setTitleNotValid] = useState(false);
 
@@ -31,6 +34,25 @@ export default function NewPost() {
       setPostNotValid(false);
     }
   }, [wordCount]);
+
+  // Function
+  // TODO Handle Submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
+    const dateTime = format(new Date(), "PPPPp");
+    const newPost = { id, title: postTitle, dateTime, body: postBody };
+    try {
+      const response = await api.post("/posts", newPost);
+      const allPosts = [...posts, response.data];
+      setPosts(allPosts);
+      setPostTitle("");
+      setPostBody("");
+      history.push("/");
+    } catch (error) {
+      console.log(`Error: ${error.message}`);
+    }
+  };
 
   return (
     <main className="NewPost">
