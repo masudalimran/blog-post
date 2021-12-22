@@ -34,8 +34,8 @@ function App() {
           <Route path="*" component={Missing} />
         </Switch>
         {/* Routes */}
+        <Footer />
       </DataProvider>
-      <Footer />
     </div>
   );
 }

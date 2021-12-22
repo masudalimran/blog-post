@@ -67,7 +67,7 @@ export default function EditPost() {
       );
       setEditPostTitle("");
       setEditPostBody("");
-      history.push("/");
+      history.push(`/post/${id}`);
     } catch (error) {
       console.log(`Error: ${error.message}`);
     }

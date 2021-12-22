@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+
+// import Context
+import DataContext from "../context/DataContext";
 
 export default function Footer() {
-  const today = new Date();
+  const { posts } = useContext(DataContext);
+
   return (
     <footer className="Footer">
-      <p>Copyright &copy; {today.getFullYear()}| All rights reserved to Imon</p>
+      <p>
+        {posts.length} Blog {posts.length < 2 ? "Post" : "Posts"}
+      </p>
     </footer>
   );
 }
