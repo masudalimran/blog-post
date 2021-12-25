@@ -37,6 +37,7 @@ export default function Nav() {
           <form className="searchForm" onSubmit={(e) => e.preventDefault()}>
             <label htmlFor="search">Search Post</label>
             <input
+              autoFocus
               id="search"
               type="text"
               placeholder="Search Post"
@@ -53,10 +54,10 @@ export default function Nav() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/post">Create Post</Link>
+              <Link to="post">Create Post</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="about">About</Link>
             </li>
           </ul>
         </div>

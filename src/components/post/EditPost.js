@@ -9,7 +9,7 @@ import DataContext from "../../context/DataContext";
 
 export default function EditPost() {
   // Use Context
-  const { format, history, posts, setPosts } = useContext(DataContext);
+  const { format, navigate, posts, setPosts } = useContext(DataContext);
 
   const { id } = useParams();
   const post = posts.find((post) => post.id.toString() === id);
@@ -67,7 +67,7 @@ export default function EditPost() {
       );
       setEditPostTitle("");
       setEditPostBody("");
-      history.push(`/post/${id}`);
+      navigate(`/post/${id}`);
     } catch (error) {
       console.log(`Error: ${error.message}`);
     }

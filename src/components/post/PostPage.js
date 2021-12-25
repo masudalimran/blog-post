@@ -10,7 +10,7 @@ import DataContext from "../../context/DataContext";
 
 export default function PostPage() {
   // Use Context
-  const { posts, setPosts, history } = useContext(DataContext);
+  const { posts, setPosts, navigate } = useContext(DataContext);
 
   const { id } = useParams();
   const post = posts.find((post) => post.id.toString() === id);
@@ -22,7 +22,7 @@ export default function PostPage() {
     try {
       const postsList = posts.filter((post) => post.id !== id);
       setPosts(postsList);
-      history.push("/");
+      navigate("/");
     } catch (error) {
       console.log(`Error: ${error.message}`);
     }

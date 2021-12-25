@@ -6,7 +6,7 @@ import DataContext from "../../context/DataContext";
 
 export default function NewPost() {
   // Use context
-  const { posts, setPosts, history, format } = useContext(DataContext);
+  const { posts, setPosts, navigate, format } = useContext(DataContext);
 
   // Use States
   const [postTitle, setPostTitle] = useState("");
@@ -48,7 +48,7 @@ export default function NewPost() {
       setPosts(allPosts);
       setPostTitle("");
       setPostBody("");
-      history.push("/");
+      navigate("/");
     } catch (error) {
       console.log(`Error: ${error.message}`);
     }
